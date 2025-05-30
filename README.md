@@ -164,4 +164,31 @@ const FavIcon_URL =
 
 ------------------------------------------------------------------------------------------------------------
 
-# React Fiber / Reconcilation Algorithm
+# React Fiber / Reconciliation Algorithm
+
+virtual dom is a object reprensentation of actual dom
+
+so In react 16, what react do to update UI is there will be old Virtual dom and new virtual dom and than it will
+compare and than update the changes in UI
+
+so in out food app, there were 20 items in resturant cards and when we apply (on click) filter it lowered
+down to 14 so 20 items were in old Virtual DOM and 14 were in new virtual DOM which than be compared and 
+updated to UI this is Reconciliation Algorithm or React Fiber
+virtual dom is just a object, if we console.log a component it will give an object. It will return a react element
+like we use to make
+const head = React.createElement(h1,{},"Namaste");
+like this it will convert whole jsx to this structure and return a object
+react does not find differnce between HTML or css it compares 2 object and than update actual dom
+that is why react is fast
+
+-----------------------------------------------------------------------------------------------------------------
+
+# why react is fast?
+ - beacuse react is doing efficient DOM Manupulation 
+ - it has diff algorithm which can do efficient DOM manupulation
+
+# How?
+- because it has a virtual DOM
+
+-----------------------------------------------------------------------------------------------------------------
+
