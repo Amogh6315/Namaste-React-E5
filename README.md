@@ -192,3 +192,39 @@ that is why react is fast
 
 -----------------------------------------------------------------------------------------------------------------
 
+# Single Responsibility principle / Seperation of concerns
+- it is when we make microservices like multilpe services like UI, DB, Authentication, etc. they talk to each other
+to make whole application. 
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+Whenever the state variable update, react trigger a reconciliation cycle(re-render the component)
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+  if no dependency array => useEffect is called on every render
+  if dependency array is empty = [] => useEffect is called on intial render(just once)
+  is dependency array is [btnLogin] => useEffect is called everytime btnLogin is updated
+  useEffect(()=>{
+    console.log("useEffect is called");
+    
+  },[])
+  
+-----------------------------------------------------------------------------------------------------------------
+
+To navigate a differnt route use Link tag not ahref ahref will reload the whole page but link will just refresh the component
+that's why it is one page application via client side routing
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+# 2 Types of Routing
+- Client Side Routing - In this we load the page and just playing with components. No call so server to fetch data
+- Server Side Routing - In this like our old website we use to fetch data for every file from server
+
+
+-----------------------------------------------------------------------------------------------------------------
+
