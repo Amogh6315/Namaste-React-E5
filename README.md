@@ -242,3 +242,19 @@ useEffect(()=>{
 
 -----------------------------------------------------------------------------------------------------------------
 
+For scaling our application we divide app in chunks  known as
+ - chunking
+ - code spliting
+ - Dynamic Bundling
+ - Lazy Loading
+ - On demand Loading
+ - Dynamic import
+
+
+
+we use lazy(()=>import("path of component")) function and than use Suspense with fallback for 
+rendering in the middle time
+
+-----------------------------------------------------------------------------------------------------------------
+
+

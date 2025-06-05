@@ -3,6 +3,8 @@ const LOGO_URL =
 
 export default LOGO_URL;
 
+export const gitInfo = "https://api.github.com/users/amogh6315";
+
 // So this is important
 // there are 2 type of export
 // 1. default export

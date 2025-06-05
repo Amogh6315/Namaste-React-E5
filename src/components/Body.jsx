@@ -3,6 +3,7 @@ import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   // Normal js list which can not be updated dynamically
   // let listOfRes = [
@@ -193,6 +194,9 @@ const Body = () => {
   // }
 
   // we can also write in tirnary operator
+  const onlineStatus = useOnlineStatus();
+if(!onlineStatus) return <h1>Looks Offline!!! Please check your Internet Connection</h1>
+
   return listOfRes.length === 0 ? (
     <Shimmer />
   ) : (
