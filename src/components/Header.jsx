@@ -9,7 +9,7 @@ const Header = () => {
   //if dependency array is empty = [] => useEffect is called on intial render(just once)
   //is dependency array is [btnLogin] => useEffect is called everytime btnLogin is updated
   useEffect(()=>{
-    console.log("useEffect is called");
+    // console.log("useEffect is called");
     
   },[])
 

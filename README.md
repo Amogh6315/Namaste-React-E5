@@ -228,3 +228,17 @@ that's why it is one page application via client side routing
 
 -----------------------------------------------------------------------------------------------------------------
 
+to unmount in class based component we have componentwillunmount function but in functional based component
+we use return like
+useEffect(()=>{
+  console.log("hi");
+
+  return () ={
+
+  }
+
+  this return will act like this
+})
+
+-----------------------------------------------------------------------------------------------------------------
+
