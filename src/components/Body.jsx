@@ -195,23 +195,25 @@ const Body = () => {
 
   // we can also write in tirnary operator
   const onlineStatus = useOnlineStatus();
-if(!onlineStatus) return <h1>Looks Offline!!! Please check your Internet Connection</h1>
+  if (!onlineStatus)
+    return <h1>Looks Offline!!! Please check your Internet Connection</h1>;
 
   return listOfRes.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search m-4 mr-0 p-4 ">
           <input
             type="text"
-            className="search-box"
+            className="search-box border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="px-4 py-1 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               // filter the resturat card and update the UI
               const filteredResturantList = listOfRes.filter((res) => {
@@ -226,18 +228,22 @@ if(!onlineStatus) return <h1>Looks Offline!!! Please check your Internet Connect
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = listOfRes.filter((res) => res.data.rating > 4);
-            console.log(filteredList);
-            setFilteredResturant(filteredList);
-          }}
-        >
-          Top Rated Resturants
-        </button>
+        <div className="m-4 ml-0 p-4 flex items-center">
+          <button
+            className="filter-btn px-4 py-1 rounded-lg bg-gray-100"
+            onClick={() => {
+              const filteredList = listOfRes.filter(
+                (res) => res.data.rating > 4
+              );
+              console.log(filteredList);
+              setFilteredResturant(filteredList);
+            }}
+          >
+            Top Rated Resturants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="res-container flex flex-wrap justify-baseline">
         {filteredResturant.map((resturant) => (
           <Link key={resturant.data.id} to={"resturant/" + resturant.data.id}>
             <ResturantCard resData={resturant} />
