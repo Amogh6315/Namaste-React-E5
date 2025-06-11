@@ -1,4 +1,4 @@
-import ResturantCard from "./ResturantCard";
+import ResturantCard,{withPromotedLabel} from "./ResturantCard";
 import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
@@ -32,6 +32,8 @@ const Body = () => {
   //     },
   //   },
   // ];
+
+  const ResturantCardPromoted = withPromotedLabel(ResturantCard);
 
   // so we will use hooks to implement this
   // we will create useState variable
@@ -246,7 +248,11 @@ const Body = () => {
       <div className="res-container flex flex-wrap justify-baseline">
         {filteredResturant.map((resturant) => (
           <Link key={resturant.data.id} to={"resturant/" + resturant.data.id}>
-            <ResturantCard resData={resturant} />
+            {resturant.data.promoted ? (
+              <ResturantCardPromoted resData={resturant} />
+            ) : (
+              <ResturantCard resData={resturant} />
+            )}
           </Link>
         ))}
       </div>

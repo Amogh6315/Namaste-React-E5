@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -7,16 +7,31 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu.jsx";
+import UserContext from "./utils/UserContext.js";
 // import Grocery from "./components/Grocery.jsx";
 
 const Grocery = lazy(() => import("./components/Grocery.jsx"));
 
 const AppLayout = () => {
+  const [userName, setUserName] = useState("");
+  // we will fetch data from json of userName
+  useEffect(() => {
+    const data = {
+      name: "Amogh Gupta",
+    };
+    setUserName(data.name);
+  }, []);
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    // we can provide any value like this also
+    // <UserContext.Provider value={{ loggedInUser: "userName", setUserName }}>
+    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
+    // something outside of usercontext provide will take default value
+    // and we can pass multiple usercontext for any component that will take that particular value
   );
 };
 

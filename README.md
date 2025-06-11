@@ -257,4 +257,22 @@ rendering in the middle time
 
 -----------------------------------------------------------------------------------------------------------------
 
+Higher Order Component are just a function they just take one component and returns a component and that component
+is a enhanced version of it. just like on top of cards we see bestseller or promoted written.
+
+-----------------------------------------------------------------------------------------------------------------
+
+useContext
+so if we want to use some data in multiple component we have to pass it like
+resturant menu -> resturant card -> resturant category -> itemList 
+so data from menu to item list will be passed by sending in each component which does not even using that. this is 
+know as props drilling but to solve this we have useContext 
+it like like putting in global so can any component can access
+I'll be making UserContext as example
+this all is done in fuctional component using hook useContext
+
+for class component we have UserContext.Consume  this usercontext is component made by us
+this .consume componet is used we wrap things inside it. it gives value and in return part we can do our work
+
+-----------------------------------------------------------------------------------------------------------------
 
