@@ -276,3 +276,8 @@ this .consume componet is used we wrap things inside it. it gives value and in r
 
 -----------------------------------------------------------------------------------------------------------------
 
+redux toolkit 
+Will be using for data layer for data managemnet
+
+Add(button clicked) => dispatch Action => call reducer function => modify the slice of store 
+using selector (subscribing to the store) => cart gets updated
